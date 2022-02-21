@@ -132,24 +132,24 @@ function checkNotAuthenticated(req, res, next) {
 }
 
 //admin
-const credential = {
-  email: "admin@gmail.com",
-  password: "admin",
-};
-app.get("/admin", (req, res) => {
-  res.render("loginAdmin");
-});
-app.get("/admin/dashboard", (req, res) => {
-  res.render("pageadmin"); //bikin page admin
-});
-app.post("/admin", (req, res) => {
-  if (req.body.email == credential.email && req.body.password == credential.password) {
-    req.session.user = req.body.email;
-    res.redirect("/admin/dashboard");
-  } else {
-    res.send("invalid uname");
-  }
-});
+// const credential = {
+//   email: "admin@gmail.com",
+//   password: "admin",
+// };
+// app.get("/admin", (req, res) => {
+//   res.render("loginAdmin");
+// });
+// app.get("/admin/dashboard", (req, res) => {
+//   res.render("pageadmin");
+// });
+// app.post("/admin", (req, res) => {
+//   if (req.body.email == credential.email && req.body.password == credential.password) {
+//     req.session.user = req.body.email;
+//     res.redirect("/admin/dashboard");
+//   } else {
+//     res.send("invalid uname");
+//   }
+// });
 
 app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
